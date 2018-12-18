@@ -1,26 +1,20 @@
-package real;
+package gms;
 
 public class Calc {
 	public String plus(int a , int b) {
-		String res ="";
-		
-		return res;
+		return a+b+"";
 	}
 	public String minus(int a , int b) {
-		String res ="";
-		return res;
+		return a-b+"";
 	}
 	public String multi(int a , int b) {
-		String res ="";
-		return res;
+		return a*b+"";
 	}
 	public String division(int a , int b) {
-		String res ="";
-		return res;
+		return a/b+"";
 	}
 	public String Percent(int a , int b) {
-		String res ="";
-		return res;
+		return a%b+"";
 	}
 	public String gugudan(String dan) {
 		String res ="";
