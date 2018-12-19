@@ -28,15 +28,16 @@ public class Account {
 		return res;
 	}
 	public String today() {
-		String res = "";
+		String today = "";
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return res;
+		today = sdf.format(date);
+		return today;
 	}
 	public String open(String name) {
-		return String.format("1.은행:%s"
-				+ "2.이름:%s"
-				+ "3.날짜:%s"
-				+ "4.잔고:%s",BANK_NAME,name,today,money);
+		return String.format("1.은행:%s\n"
+				+ "2.이름:%s\n"
+				+ "3.날짜:%s\n"
+				+ "4.잔고:%s\n",BANK_NAME,name,today,money);
 	}
 }
