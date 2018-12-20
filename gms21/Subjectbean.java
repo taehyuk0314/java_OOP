@@ -21,11 +21,10 @@ public class Subjectbean {
 	public int getscore() {
 		return score;
 	}
-	public String toString(String hakbun,String name,String subjName,int score) {
-		return String.format("학번은:%s\n"
-				+ "학생이름:%s\n"
-				+ "과목명:%s\n"
-				+ "점수:%s\n",hakbun,name,subjName,score);
+	public String toString() {
+		return String.format("과목명:%s\n"
+				+ "점수:%d\n"
+				+ "교수님 :%s\n ",subjName,score,profName);
 		
 	}
 }

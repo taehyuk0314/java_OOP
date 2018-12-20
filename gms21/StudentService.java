@@ -6,9 +6,7 @@ public class StudentService {
 	public String hakbun() {
 		String hakbun="";
 		Random random = new Random();
-		for(int i =0;i<4;i++) {
-			hakbun +=random.nextInt(10);
-		}
+			hakbun +=random.nextInt(9999)+1;
 		return hakbun;
 	}
 	public String info(String hakbun,String name,String ssn,String pass) {

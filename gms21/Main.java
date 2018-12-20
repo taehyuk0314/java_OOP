@@ -5,8 +5,9 @@ import javax.swing.JOptionPane;
 public class Main {
 	public static void main(String[] args) {
 		Studentbean studentbean = null;
-		Subjectbean subjectbean = null;
 		StudentService service = new StudentService();
+		Subjectbean subjectbean = new Subjectbean();
+		SubjectService service2 = new SubjectService();
 		while(true) {
 			/*성적표 표시될 내용 : 학번 (Student)
 			 * 학생이름(Student)
@@ -14,7 +15,14 @@ public class Main {
 			 * 점수 (Subject)
 			 * 학번은 student
 			 */
-			switch(JOptionPane.showInputDialog("0.종료\n 1.학생부등록\n 2. 비번변경\n 3. 회원정보보기\n 4. 수강과목등록\n 5.교수등록\n 6.점수등록\n 7.성적표보기")) {
+			switch(JOptionPane.showInputDialog("0.종료\n "
+					+ "1.학생부등록\n "
+					+ "2. 비번변경\n "
+					+ "3. 회원정보보기\n "
+					+ "4. 수강과목등록\n "
+					+ "5.교수등록\n "
+					+ "6.점수등록\n "
+					+ "7.성적표보기")) {
 			case "0":
 				JOptionPane.showMessageDialog(null, "종료됩니다");
 				return;
@@ -41,7 +49,6 @@ public class Main {
 				JOptionPane.showMessageDialog(null, info2);
 				break;
 			case"4":
-				subjectbean = new Subjectbean();
 				String subjName = JOptionPane.showInputDialog("수강하실과목을 입력하세요");
 				subjectbean.setsubjName(subjName); 
 				break;
@@ -51,8 +58,8 @@ public class Main {
 				break;
 			case"6":
 				String score = JOptionPane.showInputDialog("점수를 입력하세요");
-				int score1 = Integer.parseInt(score);
-				subjectbean.setscore(score1);
+				
+				subjectbean.setscore(Integer.parseInt(score));
 				break;
 				/*
 				 * 학번
@@ -61,10 +68,11 @@ public class Main {
 				 * 점수
 				 */
 			case"7":
-				String toString = subjectbean.toString(studentbean.gethakbun(),
+				String toString = service2.info2(studentbean.gethakbun(),
 						studentbean.getname(),
 						subjectbean.getsubjName(),
-						subjectbean.getscore());
+						subjectbean.getscore(),
+						subjectbean.getprofName());
 				JOptionPane.showMessageDialog(null, toString);
 				break;
 			}
