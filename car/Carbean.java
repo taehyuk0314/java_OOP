@@ -4,8 +4,6 @@ public class Carbean {
 	private String color,gearType;
 	private int door; //문의 갯수
 	
-	
-	
 	public void setcolor(String color) {
 		this.color =color;
 	}
