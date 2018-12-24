@@ -16,12 +16,15 @@ public class Controller {
 					+ "3.계좌보기\n"
 					+ "4.입금\n"
 					+ "5.출금\n "
-					+ "6.비밀번호 변경")) {
+					+ "6.비밀번호 변경\n"
+					+ "7.회원보기"
+					+ "8.회원찾기"
+					+ "9.로그인")) {
 			case "0":
 				JOptionPane.showMessageDialog(null,"종료됩니다");
 				return;
 			case"1" :
-				member = memberService.join(
+				memberService.join(
 						JOptionPane.showInputDialog("아이디를 입력하세요"),
 						JOptionPane.showInputDialog("이름을 입력하세요"),
 						JOptionPane.showInputDialog("주민번호를 입력하세요"),
@@ -63,6 +66,23 @@ public class Controller {
 				String passch  = JOptionPane.showInputDialog("비밀번호를 변경해주세요");
 				member.setpass(passch);
 				break;
+			case"7":
+				MemberBean[] members = memberService.list();
+				JOptionPane.showMessageDialog(null, members);
+				break;
+			case"8":
+				JOptionPane.showMessageDialog(null, memberService.find(JOptionPane.showInputDialog("검색할 아이디")));
+				break;
+			case"9":
+				String id = JOptionPane.showInputDialog("로그인 아이디");
+				String pass = JOptionPane.showInputDialog("비밀번호");
+//				if(memberService.login(id, pass)) {
+//					JOptionPane.showMessageDialog(null, "로그인 성공");
+//				}else{
+//					JOptionPane.showMessageDialog(null, "로그인 실패");
+//					
+//				}
+				JOptionPane.showMessageDialog(null,memberService.login(id, pass) ? "로그인 성공" :"로그인 실패");
 			}
 		}
 

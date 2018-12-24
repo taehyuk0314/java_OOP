@@ -15,7 +15,7 @@ public class MemberBean {
 	public void setpass(String pass) { //setter 세터
 		this.pass = pass; // write 글을 쓰는 것 인풋
 	}
-	public String getpass(String pass) {
+	public String getpass() {
 		return this.pass;
 	}
 	public void setssn(String ssn) { //setter 세터

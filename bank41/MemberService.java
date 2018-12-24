@@ -1,8 +1,8 @@
-package bank31;
+package bank41;
 
 public interface MemberService {
 	//회원가입
-	public void join(String id,String name,String ssn,String pass) ;
+	public MemberBean join(String id,String name,String ssn,String pass) ;
 	//----------------------------------------------
 	//목록보기	
 	public MemberBean [] list();
@@ -14,9 +14,8 @@ public interface MemberService {
 	public int count();
 	//-----------------------------------------------
 	//정보수정
-	public void update() ;
+	public void update(String id,String pass, String newpass) ;
 	//회원탈퇴
 	public void delete() ;
-		
 	
 }
